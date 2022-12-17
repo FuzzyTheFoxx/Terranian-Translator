@@ -1,0 +1,25 @@
+import os; from os import system as sys
+import argparse
+_parser = argparse.ArgumentParser(
+    exit_on_error=1, description=' --execution file--'
+)
+_parser.add_argument('--translation',
+                     help=' --execiution file--'
+                     )
+_arg = _parser.parse_args()
+
+
+file = open('write.txt','r')
+readfile = file.read()
+print(f' -- write.txt --')
+print(readfile)
+print(f' -- write.txt --')
+
+letter = input('\n> ')
+
+if _arg.translation == 'trlt':
+    sys(f'python3 data1.db --letter "{letter}" --translation trlt')
+elif _arg.translation == 'lttr':
+    sys(f'python3 data1.db --letter "{letter}" --translation lttr')
+
+sys(f'python3 data2.db --translation "{_arg.translation}"')

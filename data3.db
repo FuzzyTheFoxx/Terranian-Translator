@@ -1,0 +1,14 @@
+import os; from os import system as sys
+print(
+    '\n Possible translations:'
+    '\n 1 - Terranian --> Latin'
+    '\n 2 - Latin --> Terranian'
+)
+translation = input('\n\n > ')
+
+if translation == '1':
+    print(f' -- Selected {translation}, Terranian --> Latin --')
+    sys('python3 data2.db --translation trlt')
+elif translation == '2':
+    print(f' -- Selected {translation}, Latin --> Terranian --')
+    sys('python3 data2.db --translation lttr')
