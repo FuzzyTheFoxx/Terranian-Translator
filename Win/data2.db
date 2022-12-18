@@ -8,11 +8,18 @@ _parser.add_argument('--translation',
                      )
 _arg = _parser.parse_args()
 
-letter = input('\n\n > ')
+
+file = open('write.txt','r')
+readfile = file.read()
+print(f' -- write.txt --')
+print(readfile)
+print(f' -- write.txt --')
+
+letter = input('\n> ')
 
 if _arg.translation == 'trlt':
-    sys(f'py data1 --letter "{letter}" --translation trlt')
-    sys('py data2')
+    sys(f'py data1.db --letter "{letter}" --translation trlt')
 elif _arg.translation == 'lttr':
-    sys(f'py data1 --letter "{letter}" --translation lttr')
-    sys('py data2')
+    sys(f'py data1.db --letter "{letter}" --translation lttr')
+
+sys(f'py data2.db --translation "{_arg.translation}"')
